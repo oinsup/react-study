@@ -1,8 +1,85 @@
 @charset "utf-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+caption{display:none;;}
+
+
+
+
+#root{padding:60px;}
 .btn{display:flex;align-items:center;justify-content:center;padding:0 20px;height:40px;border:0;border-radius:3px;
     background:none;color:#fff;box-sizing:border-box;cursor: pointer;
     &.red{background:#ff0000;}
     &.blue{background:#003cff;}
     &.yellow{background:#ffe600;}
+}
+
+.table{width:100%;border-top:1px solid #666;border-bottom:1px solid #666;
+    &+.table{margin-top:20px;}
+    table{width:100%;
+        thead{
+            tr{
+                th{border-bottom:1px solid #666;background:#ffe600;}
+            }
+        }
+        tbody{
+            tr{
+                th,td{border-bottom:1px solid #666;}
+                &:last-child{
+                    td{border-bottom:0;}
+                }
+            }
+        }
+        tr{
+            th,td{border-left:1px solid #666;text-align:center;
+                &:last-child{border-right:1px solid #666;;}
+            }
+        }
+    }
 }

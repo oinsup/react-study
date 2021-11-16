@@ -1,36 +1,61 @@
 import React from "react";
-import TableCol from "./TableCol";
-import TableTd from "./TableTd";
-import TableTh from "./TableTh";
-import TableTr from "./TableTr";
-
+import Data from "./data.json";
+for (var key in Data) {
+  console.log(Data[key]);
+}
 const Table = (prop) => {
-  let tableCont = [
-    ["120px","이름", "나이", "성별"],
-    ["140px","오인섭", "32", "남"],
-    ["110px","sam", "33", "여"],
-  ];
   return (
-    <div className="table">
-      <table>
-        <caption>{prop.tName}</caption>
-        <colgroup>
-          {tableCont.map((i, index) => {
-            return <TableCol key={index} width={i[0]} />;
-          })}
-        </colgroup>
-        <thead>
-          <tr>
-            {tableCont[0].map((i, index) => {
-                const res = tableCont[0][0]
-                return <TableTh key={index} value={i} />;
+    <>
+      <div className="table">
+        <table>
+          <caption>{prop.tName}</caption>
+          <colgroup></colgroup>
+          <thead>
+            <tr>
+              {Data.map((i) => {
+                return <th scope="col">{i.name}</th>;
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {Data.map((i) => {
+                return <td>{i.age}</td>;
+              })}
+            </tr>
+            <tr>
+              {Data.map((i) => {
+                return <td>{i.gender}</td>;
+              })}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="table">
+        <table>
+          <caption>{prop.tName}</caption>
+          <colgroup></colgroup>
+          <thead>
+            <tr>
+              <th>이름</th>
+              <th>나이</th>
+              <th>성별</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Data.map((i) => {
+              return (
+                <tr>
+                  <td>{i.name}</td>
+                  <td>{i.age}</td>
+                  <td>{i.gender}</td>
+                </tr>
+              );
             })}
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 
