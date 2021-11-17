@@ -12,20 +12,20 @@ const Table = (prop) => {
           <colgroup></colgroup>
           <thead>
             <tr>
-              {Data.map((i) => {
-                return <th scope="col">{i.name}</th>;
+              {Data.map((i,index) => {
+                return <th scope="col" key={index}>{i.name}</th>;
               })}
             </tr>
           </thead>
           <tbody>
             <tr>
-              {Data.map((i) => {
-                return <td>{i.age}</td>;
+              {Data.map((i,index) => {
+                return <td key={index}>{i.age}</td>;
               })}
             </tr>
             <tr>
-              {Data.map((i) => {
-                return <td>{i.gender}</td>;
+              {Data.map((i,index) => {
+                return <td key={index}>{i.gender}</td>;
               })}
             </tr>
           </tbody>
@@ -43,9 +43,9 @@ const Table = (prop) => {
             </tr>
           </thead>
           <tbody>
-            {Data.map((i) => {
+            {Data.map((i,index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td>{i.name}</td>
                   <td>{i.age}</td>
                   <td>{i.gender}</td>
