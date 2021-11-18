@@ -50,9 +50,36 @@ table {
 caption{display:none;;}
 
 
+.flex{display:flex;
+    &.sb{justify-content:space-between;}
+    &.ac{align-items:center;}
+}
+html,body,#root{height:100%;}
+#header{position:absolute;left:0;top:0;z-index:1000;width:100%;height:100px;background:linear-gradient(to right,#376fee,#79ceff);box-shadow:0 3px 5px rgba(0,0,0,.5);
+    >.inner{padding:0 50px;}
+}
+#container{display:flex;height:100%;}
+#map{flex:1;height:100%;background:#ccc;}
+#toc{width:400px;padding-top:200px}
+#gnb{
+    >ul{display:flex;
+        &:hover{
+            >li{
+                ul{height:120px;opacity:1;visibility:visible;}
+            }
+        }
+        >li{height:100px;line-height:100px;padding:0 40px;text-align:center;
+            >a{color:#fff;}
+            ul{opacity:0;visibility:hidden;height:0px;transition:.4s;
+                li{line-height:30px;}
+            }
+        }
+    }
+}
 
 
-#root{padding:60px;}
+
+
 .btn{display:flex;align-items:center;justify-content:center;padding:0 20px;height:40px;border:0;border-radius:3px;
     background:none;color:#fff;box-sizing:border-box;cursor: pointer;
     &.red{background:#ff0000;}
