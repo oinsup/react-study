@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useState,useRef} from 'react';
+import * as FuncList from "./FuncList";
 
-const Btn = (prop) => {
+const Btn = ({classname,name, _ref}) => {
     return (
-        <button className={`btn ${prop.class}`}>
-            {prop.name}
+        <button className={`btn ${classname}`} ref={_ref}>
+            {name}
         </button>
     );
 };
